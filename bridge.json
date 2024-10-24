@@ -2,95 +2,10 @@
     {
         "id": "f58305dbdfb3aed7",
         "type": "tab",
-        "label": "Light strip testing",
+        "label": "HomeKit: LabPowerStrips",
         "disabled": false,
         "info": "",
         "env": []
-    },
-    {
-        "id": "c3f2e1ed49003cfa",
-        "type": "kasa",
-        "z": "f58305dbdfb3aed7",
-        "name": "Plug 2",
-        "device": "192.168.254.154/1",
-        "interval": 60000,
-        "eventInterval": 15000,
-        "payload": "getQuickInfo",
-        "payloadType": "info",
-        "debug": true,
-        "x": 910,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "67a071c2f780d23c",
-        "type": "kasa",
-        "z": "f58305dbdfb3aed7",
-        "name": "Plug 3",
-        "device": "192.168.254.154/2",
-        "interval": 60000,
-        "eventInterval": 15000,
-        "payload": "getQuickInfo",
-        "payloadType": "info",
-        "debug": true,
-        "x": 910,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "eeb26bbf380f829c",
-        "type": "kasa",
-        "z": "f58305dbdfb3aed7",
-        "name": "Plug 4",
-        "device": "192.168.254.154/3",
-        "interval": 60000,
-        "eventInterval": 15000,
-        "payload": "getQuickInfo",
-        "payloadType": "info",
-        "debug": true,
-        "x": 910,
-        "y": 460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "58b0433ac8c38941",
-        "type": "kasa",
-        "z": "f58305dbdfb3aed7",
-        "name": "Plug 5",
-        "device": "192.168.254.154/4",
-        "interval": 60000,
-        "eventInterval": 15000,
-        "payload": "getQuickInfo",
-        "payloadType": "info",
-        "debug": true,
-        "x": 910,
-        "y": 520,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c251737f72d0c6d0",
-        "type": "kasa",
-        "z": "f58305dbdfb3aed7",
-        "name": "Plug 6",
-        "device": "192.168.254.154/5",
-        "interval": 60000,
-        "eventInterval": 15000,
-        "payload": "getQuickInfo",
-        "payloadType": "info",
-        "debug": true,
-        "x": 910,
-        "y": 600,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "dace60cedfea2394",
@@ -98,26 +13,9 @@
         "z": "f58305dbdfb3aed7",
         "name": "Zero-index Plugs",
         "info": "",
-        "x": 920,
-        "y": 180,
+        "x": 820,
+        "y": 160,
         "wires": []
-    },
-    {
-        "id": "bfb942bc3b191d01",
-        "type": "kasa",
-        "z": "f58305dbdfb3aed7",
-        "name": "Plug 1",
-        "device": "192.168.254.154/0",
-        "interval": 60000,
-        "eventInterval": 15000,
-        "payload": "getQuickInfo",
-        "payloadType": "info",
-        "debug": true,
-        "x": 910,
-        "y": 260,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "503a4c551f4e455b",
@@ -125,10 +23,10 @@
         "z": "f58305dbdfb3aed7",
         "isParent": true,
         "hostType": "0",
-        "bridge": "444ec423f8805849",
+        "bridge": "ca3fb06829513939",
         "accessoryId": "",
         "parentService": "",
-        "name": "Plug 1",
+        "name": "Nikon LUA-S4",
         "serviceName": "Outlet",
         "topic": "",
         "filter": false,
@@ -162,10 +60,8 @@
         "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
         "waitForSetupMsg": false,
         "outputs": 2,
-        "adaptiveLightingOptionsEnable": false,
-        "adaptiveLightingOptionsCustomTemperatureAdjustment": "",
-        "x": 310,
-        "y": 260,
+        "x": 240,
+        "y": 240,
         "wires": [
             [
                 "b0e06e3f012f25b2"
@@ -178,15 +74,15 @@
         "type": "function",
         "z": "f58305dbdfb3aed7",
         "name": "State",
-        "func": "msg.payload = msg.payload.On;\nreturn msg;",
+        "func": "msg.payload = msg.payload.On;\nreturn msg; ",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
-        "initialize": "",
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\n// return { events: 'startPowerUpdateEvents'}",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 260,
+        "x": 410,
+        "y": 240,
         "wires": [
             [
                 "bfb942bc3b191d01"
@@ -199,10 +95,10 @@
         "z": "f58305dbdfb3aed7",
         "isParent": true,
         "hostType": "0",
-        "bridge": "444ec423f8805849",
+        "bridge": "ca3fb06829513939",
         "accessoryId": "",
         "parentService": "",
-        "name": "Plug 2",
+        "name": "Tokai Controller Module",
         "serviceName": "Outlet",
         "topic": "",
         "filter": false,
@@ -236,10 +132,8 @@
         "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
         "waitForSetupMsg": false,
         "outputs": 2,
-        "adaptiveLightingOptionsEnable": false,
-        "adaptiveLightingOptionsCustomTemperatureAdjustment": "",
-        "x": 310,
-        "y": 340,
+        "x": 190,
+        "y": 320,
         "wires": [
             [
                 "4411f9cd7a870ddb"
@@ -259,8 +153,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 340,
+        "x": 410,
+        "y": 320,
         "wires": [
             [
                 "c3f2e1ed49003cfa"
@@ -268,63 +162,10 @@
         ]
     },
     {
-        "id": "99d213162b0efd76",
-        "type": "homekit-service",
-        "z": "f58305dbdfb3aed7",
-        "isParent": true,
-        "hostType": "0",
-        "bridge": "444ec423f8805849",
-        "accessoryId": "",
-        "parentService": "",
-        "name": "Plug 3",
-        "serviceName": "Outlet",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "MIE",
-        "model": "1.4.2",
-        "serialNo": "Default Serial Number",
-        "firmwareRev": "1.4.2",
-        "hardwareRev": "1.4.2",
-        "softwareRev": "1.4.2",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "adaptiveLightingOptionsEnable": false,
-        "adaptiveLightingOptionsCustomTemperatureAdjustment": "",
-        "x": 330,
-        "y": 400,
-        "wires": [
-            [
-                "b14e1ddd43df1a4a"
-            ],
-            []
-        ]
-    },
-    {
         "id": "b14e1ddd43df1a4a",
         "type": "function",
         "z": "f58305dbdfb3aed7",
+        "d": true,
         "name": "State",
         "func": "msg.payload = msg.payload.On;\n\nreturn msg;",
         "outputs": 1,
@@ -333,8 +174,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 400,
+        "x": 410,
+        "y": 380,
         "wires": [
             [
                 "67a071c2f780d23c"
@@ -342,63 +183,10 @@
         ]
     },
     {
-        "id": "bbf66bfe2f875865",
-        "type": "homekit-service",
-        "z": "f58305dbdfb3aed7",
-        "isParent": true,
-        "hostType": "0",
-        "bridge": "444ec423f8805849",
-        "accessoryId": "",
-        "parentService": "",
-        "name": "Plug 4",
-        "serviceName": "Outlet",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "MIE",
-        "model": "1.4.2",
-        "serialNo": "Default Serial Number",
-        "firmwareRev": "1.4.2",
-        "hardwareRev": "1.4.2",
-        "softwareRev": "1.4.2",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "adaptiveLightingOptionsEnable": false,
-        "adaptiveLightingOptionsCustomTemperatureAdjustment": "",
-        "x": 330,
-        "y": 460,
-        "wires": [
-            [
-                "d6a293675fd4c2c9"
-            ],
-            []
-        ]
-    },
-    {
         "id": "d6a293675fd4c2c9",
         "type": "function",
         "z": "f58305dbdfb3aed7",
+        "d": true,
         "name": "State",
         "func": "msg.payload = msg.payload.On;\n\nreturn msg;",
         "outputs": 1,
@@ -407,8 +195,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 460,
+        "x": 410,
+        "y": 440,
         "wires": [
             [
                 "eeb26bbf380f829c"
@@ -416,63 +204,10 @@
         ]
     },
     {
-        "id": "51db0a5ef50bd0ee",
-        "type": "homekit-service",
-        "z": "f58305dbdfb3aed7",
-        "isParent": true,
-        "hostType": "0",
-        "bridge": "444ec423f8805849",
-        "accessoryId": "",
-        "parentService": "",
-        "name": "Plug 5",
-        "serviceName": "Outlet",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "MIE",
-        "model": "1.4.2",
-        "serialNo": "Default Serial Number",
-        "firmwareRev": "1.4.2",
-        "hardwareRev": "1.4.2",
-        "softwareRev": "1.4.2",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "adaptiveLightingOptionsEnable": false,
-        "adaptiveLightingOptionsCustomTemperatureAdjustment": "",
-        "x": 350,
-        "y": 520,
-        "wires": [
-            [
-                "675d8ab68c594ba6"
-            ],
-            []
-        ]
-    },
-    {
         "id": "675d8ab68c594ba6",
         "type": "function",
         "z": "f58305dbdfb3aed7",
+        "d": true,
         "name": "State",
         "func": "msg.payload = msg.payload.On;\n\nreturn msg;",
         "outputs": 1,
@@ -481,8 +216,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 520,
+        "x": 410,
+        "y": 500,
         "wires": [
             [
                 "58b0433ac8c38941"
@@ -490,15 +225,256 @@
         ]
     },
     {
-        "id": "16be37926c7d585e",
+        "id": "d501490324596490",
+        "type": "function",
+        "z": "f58305dbdfb3aed7",
+        "d": true,
+        "name": "State",
+        "func": "msg.payload = msg.payload.On;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 580,
+        "wires": [
+            [
+                "c251737f72d0c6d0"
+            ]
+        ]
+    },
+    {
+        "id": "c3f2e1ed49003cfa",
+        "type": "kasa",
+        "z": "f58305dbdfb3aed7",
+        "name": "Plug 2",
+        "device": "10.3.2.141/1",
+        "interval": "1000",
+        "eventInterval": "1000",
+        "payload": "getQuickInfo",
+        "payloadType": "info",
+        "debug": true,
+        "x": 810,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67a071c2f780d23c",
+        "type": "kasa",
+        "z": "f58305dbdfb3aed7",
+        "d": true,
+        "name": "Plug 3",
+        "device": "10.3.2.141/2",
+        "interval": "1000",
+        "eventInterval": "1000",
+        "payload": "getQuickInfo",
+        "payloadType": "info",
+        "debug": true,
+        "x": 810,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eeb26bbf380f829c",
+        "type": "kasa",
+        "z": "f58305dbdfb3aed7",
+        "d": true,
+        "name": "Plug 4",
+        "device": "10.3.2.141/3",
+        "interval": "1000",
+        "eventInterval": "1000",
+        "payload": "getQuickInfo",
+        "payloadType": "info",
+        "debug": true,
+        "x": 810,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "58b0433ac8c38941",
+        "type": "kasa",
+        "z": "f58305dbdfb3aed7",
+        "d": true,
+        "name": "Plug 5",
+        "device": "10.3.2.141/4",
+        "interval": "1000",
+        "eventInterval": "1000",
+        "payload": "getQuickInfo",
+        "payloadType": "info",
+        "debug": true,
+        "x": 810,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c251737f72d0c6d0",
+        "type": "kasa",
+        "z": "f58305dbdfb3aed7",
+        "d": true,
+        "name": "Plug 6",
+        "device": "10.3.2.141/5",
+        "interval": "1000",
+        "eventInterval": "1000",
+        "payload": "getQuickInfo",
+        "payloadType": "info",
+        "debug": true,
+        "x": 810,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bfb942bc3b191d01",
+        "type": "kasa",
+        "z": "f58305dbdfb3aed7",
+        "name": "Plug 1",
+        "device": "10.3.2.141/0",
+        "interval": "1000",
+        "eventInterval": "1000",
+        "payload": "getQuickInfo",
+        "payloadType": "info",
+        "debug": true,
+        "x": 810,
+        "y": 240,
+        "wires": [
+            [
+                "5fb8b1ab754d3e60"
+            ]
+        ]
+    },
+    {
+        "id": "e79c7db35dbce0fc",
+        "type": "comment",
+        "z": "f58305dbdfb3aed7",
+        "name": "PowerStrip 2",
+        "info": "",
+        "x": 250,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a7e6c9d02f39adba",
+        "type": "kasa",
+        "z": "f58305dbdfb3aed7",
+        "name": "Plug 2",
+        "device": "10.3.0.88/1",
+        "interval": "1000",
+        "eventInterval": "1000",
+        "payload": "getQuickInfo",
+        "payloadType": "info",
+        "debug": true,
+        "x": 830,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d2af4ad957911a49",
+        "type": "kasa",
+        "z": "f58305dbdfb3aed7",
+        "name": "Plug 3",
+        "device": "10.3.0.88/2",
+        "interval": "1000",
+        "eventInterval": "1000",
+        "payload": "getQuickInfo",
+        "payloadType": "info",
+        "debug": true,
+        "x": 830,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6318504ac945de88",
+        "type": "kasa",
+        "z": "f58305dbdfb3aed7",
+        "name": "Plug 4",
+        "device": "10.3.0.88/3",
+        "interval": "1000",
+        "eventInterval": "1000",
+        "payload": "getQuickInfo",
+        "payloadType": "info",
+        "debug": true,
+        "x": 830,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a7d524f6ee9b1f6e",
+        "type": "kasa",
+        "z": "f58305dbdfb3aed7",
+        "name": "Plug 5",
+        "device": "10.3.0.88/4",
+        "interval": "1000",
+        "eventInterval": "1000",
+        "payload": "getQuickInfo",
+        "payloadType": "info",
+        "debug": true,
+        "x": 830,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "45fa9a283e1d64c5",
+        "type": "kasa",
+        "z": "f58305dbdfb3aed7",
+        "name": "Plug 6",
+        "device": "10.3.0.88/5",
+        "interval": "1000",
+        "eventInterval": "1000",
+        "payload": "getQuickInfo",
+        "payloadType": "info",
+        "debug": true,
+        "x": 830,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "09ee96d8961be412",
+        "type": "kasa",
+        "z": "f58305dbdfb3aed7",
+        "name": "Plug 1",
+        "device": "10.3.0.88/0",
+        "interval": "1000",
+        "eventInterval": "1000",
+        "payload": "getQuickInfo",
+        "payloadType": "info",
+        "debug": true,
+        "x": 830,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bb64b28fd6057b03",
         "type": "homekit-service",
         "z": "f58305dbdfb3aed7",
         "isParent": true,
         "hostType": "0",
-        "bridge": "444ec423f8805849",
+        "bridge": "ca3fb06829513939",
         "accessoryId": "",
         "parentService": "",
-        "name": "Plug 6",
+        "name": "Nikon D-LEDI",
         "serviceName": "Outlet",
         "topic": "",
         "filter": false,
@@ -532,19 +508,89 @@
         "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
         "waitForSetupMsg": false,
         "outputs": 2,
-        "adaptiveLightingOptionsEnable": false,
-        "adaptiveLightingOptionsCustomTemperatureAdjustment": "",
-        "x": 350,
-        "y": 600,
+        "x": 220,
+        "y": 740,
         "wires": [
             [
-                "d501490324596490"
+                "56f7ba074088b92b"
             ],
             []
         ]
     },
     {
-        "id": "d501490324596490",
+        "id": "56f7ba074088b92b",
+        "type": "function",
+        "z": "f58305dbdfb3aed7",
+        "name": "State",
+        "func": "msg.payload = msg.payload.On;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 740,
+        "wires": [
+            [
+                "09ee96d8961be412"
+            ]
+        ]
+    },
+    {
+        "id": "373ec88ae88dbae0",
+        "type": "homekit-service",
+        "z": "f58305dbdfb3aed7",
+        "isParent": true,
+        "hostType": "0",
+        "bridge": "ca3fb06829513939",
+        "accessoryId": "",
+        "parentService": "",
+        "name": "Nikon TI2-CTLE",
+        "serviceName": "Outlet",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "MIE",
+        "model": "1.4.2",
+        "serialNo": "Default Serial Number",
+        "firmwareRev": "1.4.2",
+        "hardwareRev": "1.4.2",
+        "softwareRev": "1.4.2",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 200,
+        "y": 820,
+        "wires": [
+            [
+                "183be2f38b3f5881"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "183be2f38b3f5881",
         "type": "function",
         "z": "f58305dbdfb3aed7",
         "name": "State",
@@ -555,30 +601,376 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
-        "y": 600,
+        "x": 430,
+        "y": 820,
         "wires": [
             [
-                "c251737f72d0c6d0"
+                "a7e6c9d02f39adba"
             ]
         ]
     },
     {
-        "id": "444ec423f8805849",
+        "id": "e7851e1d1cd40fe7",
+        "type": "homekit-service",
+        "z": "f58305dbdfb3aed7",
+        "isParent": true,
+        "hostType": "0",
+        "bridge": "ca3fb06829513939",
+        "accessoryId": "",
+        "parentService": "",
+        "name": "Condor Air Compressor",
+        "serviceName": "Outlet",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "MIE",
+        "model": "1.4.2",
+        "serialNo": "Default Serial Number",
+        "firmwareRev": "1.4.2",
+        "hardwareRev": "1.4.2",
+        "softwareRev": "1.4.2",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 230,
+        "y": 880,
+        "wires": [
+            [
+                "903dbf3eacfc0819"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "903dbf3eacfc0819",
+        "type": "function",
+        "z": "f58305dbdfb3aed7",
+        "name": "State",
+        "func": "msg.payload = msg.payload.On;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 880,
+        "wires": [
+            [
+                "d2af4ad957911a49"
+            ]
+        ]
+    },
+    {
+        "id": "b4ea6c9f61ee6a64",
+        "type": "homekit-service",
+        "z": "f58305dbdfb3aed7",
+        "isParent": true,
+        "hostType": "0",
+        "bridge": "ca3fb06829513939",
+        "accessoryId": "",
+        "parentService": "",
+        "name": "Computer Bench",
+        "serviceName": "Outlet",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "MIE",
+        "model": "1.4.2",
+        "serialNo": "Default Serial Number",
+        "firmwareRev": "1.4.2",
+        "hardwareRev": "1.4.2",
+        "softwareRev": "1.4.2",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 230,
+        "y": 940,
+        "wires": [
+            [
+                "9a634f833a3c21a1"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9a634f833a3c21a1",
+        "type": "function",
+        "z": "f58305dbdfb3aed7",
+        "name": "State",
+        "func": "msg.payload = msg.payload.On;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 940,
+        "wires": [
+            [
+                "6318504ac945de88"
+            ]
+        ]
+    },
+    {
+        "id": "21a92a20eff479d2",
+        "type": "homekit-service",
+        "z": "f58305dbdfb3aed7",
+        "isParent": true,
+        "hostType": "0",
+        "bridge": "ca3fb06829513939",
+        "accessoryId": "",
+        "parentService": "",
+        "name": "Nikon LU-INTL",
+        "serviceName": "Outlet",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "MIE",
+        "model": "1.4.2",
+        "serialNo": "Default Serial Number",
+        "firmwareRev": "1.4.2",
+        "hardwareRev": "1.4.2",
+        "softwareRev": "1.4.2",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 220,
+        "y": 1000,
+        "wires": [
+            [
+                "b773f2b251ab4015"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b773f2b251ab4015",
+        "type": "function",
+        "z": "f58305dbdfb3aed7",
+        "name": "State",
+        "func": "msg.payload = msg.payload.On;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1000,
+        "wires": [
+            [
+                "a7d524f6ee9b1f6e"
+            ]
+        ]
+    },
+    {
+        "id": "6dab657a63af1668",
+        "type": "homekit-service",
+        "z": "f58305dbdfb3aed7",
+        "isParent": true,
+        "hostType": "0",
+        "bridge": "ca3fb06829513939",
+        "accessoryId": "",
+        "parentService": "",
+        "name": "Nikon AX-SHS",
+        "serviceName": "Outlet",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "MIE",
+        "model": "1.4.2",
+        "serialNo": "Default Serial Number",
+        "firmwareRev": "1.4.2",
+        "hardwareRev": "1.4.2",
+        "softwareRev": "1.4.2",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 220,
+        "y": 1080,
+        "wires": [
+            [
+                "c55c2e8c0103293d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c55c2e8c0103293d",
+        "type": "function",
+        "z": "f58305dbdfb3aed7",
+        "name": "State",
+        "func": "msg.payload = msg.payload.On;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 1080,
+        "wires": [
+            [
+                "45fa9a283e1d64c5"
+            ]
+        ]
+    },
+    {
+        "id": "1ac234221f259ae7",
+        "type": "inject",
+        "z": "f58305dbdfb3aed7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "startPowerEvents",
+        "payloadType": "str",
+        "x": 550,
+        "y": 660,
+        "wires": [
+            [
+                "bfb942bc3b191d01",
+                "c3f2e1ed49003cfa",
+                "67a071c2f780d23c",
+                "eeb26bbf380f829c",
+                "58b0433ac8c38941",
+                "c251737f72d0c6d0",
+                "09ee96d8961be412",
+                "a7e6c9d02f39adba",
+                "d2af4ad957911a49",
+                "6318504ac945de88",
+                "a7d524f6ee9b1f6e",
+                "45fa9a283e1d64c5"
+            ]
+        ]
+    },
+    {
+        "id": "5fb8b1ab754d3e60",
+        "type": "function",
+        "z": "f58305dbdfb3aed7",
+        "name": "function 1",
+        "func": "if (msg.payload.powerOn === true){\n    msg.payload = { \"On\": true };\n}\nelse if (msg.payload.powerOn === false) {\n    msg.payload = { \"On\": false };\n}\nelse {\n    msg.payload = \"Not a bool value\"\n}\n\nreturn msg; // Return the updated msg\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 240,
+        "wires": [
+            [
+                "503a4c551f4e455b"
+            ]
+        ]
+    },
+    {
+        "id": "ca3fb06829513939",
         "type": "homekit-bridge",
-        "bridgeName": "powerstripbridge",
-        "pinCode": "3158-2696",
+        "bridgeName": "Doug bridge",
+        "pinCode": "2604-1365",
         "port": "",
         "advertiser": "bonjour-hap",
         "allowInsecureRequest": false,
-        "manufacturer": "MIE",
-        "model": "1.7.1",
+        "manufacturer": "NRCHKB",
+        "model": "1.6.1",
         "serialNo": "Default Serial Number",
-        "firmwareRev": "1.7.1",
-        "hardwareRev": "1.7.1",
-        "softwareRev": "1.7.1",
-        "bind": "",
-        "bindType": "str",
+        "firmwareRev": "1.6.1",
+        "hardwareRev": "1.6.1",
+        "softwareRev": "1.6.1",
         "customMdnsConfig": false,
         "mdnsMulticast": true,
         "mdnsInterface": "",
