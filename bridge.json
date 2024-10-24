@@ -13,7 +13,7 @@
         "z": "f58305dbdfb3aed7",
         "name": "Zero-index Plugs",
         "info": "",
-        "x": 820,
+        "x": 1100,
         "y": 160,
         "wires": []
     },
@@ -60,7 +60,7 @@
         "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
         "waitForSetupMsg": false,
         "outputs": 2,
-        "x": 240,
+        "x": 520,
         "y": 240,
         "wires": [
             [
@@ -73,7 +73,7 @@
         "id": "b0e06e3f012f25b2",
         "type": "function",
         "z": "f58305dbdfb3aed7",
-        "name": "State",
+        "name": "Update Device State",
         "func": "msg.payload = msg.payload.On;\nreturn msg; ",
         "outputs": 1,
         "timeout": "",
@@ -81,7 +81,7 @@
         "initialize": "// Code added here will be run once\n// whenever the node is started.\n// return { events: 'startPowerUpdateEvents'}",
         "finalize": "",
         "libs": [],
-        "x": 410,
+        "x": 740,
         "y": 240,
         "wires": [
             [
@@ -132,7 +132,7 @@
         "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
         "waitForSetupMsg": false,
         "outputs": 2,
-        "x": 190,
+        "x": 470,
         "y": 320,
         "wires": [
             [
@@ -145,7 +145,7 @@
         "id": "4411f9cd7a870ddb",
         "type": "function",
         "z": "f58305dbdfb3aed7",
-        "name": "State",
+        "name": "Update Device State",
         "func": "msg.payload = msg.payload.On;\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
@@ -153,7 +153,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
+        "x": 740,
         "y": 320,
         "wires": [
             [
@@ -174,7 +174,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
+        "x": 690,
         "y": 380,
         "wires": [
             [
@@ -195,7 +195,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
+        "x": 690,
         "y": 440,
         "wires": [
             [
@@ -216,7 +216,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
+        "x": 690,
         "y": 500,
         "wires": [
             [
@@ -237,7 +237,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
+        "x": 670,
         "y": 580,
         "wires": [
             [
@@ -251,15 +251,17 @@
         "z": "f58305dbdfb3aed7",
         "name": "Plug 2",
         "device": "10.3.2.141/1",
-        "interval": "1000",
-        "eventInterval": "1000",
-        "payload": "getQuickInfo",
+        "interval": "5000",
+        "eventInterval": "5000",
+        "payload": "getInfo",
         "payloadType": "info",
-        "debug": true,
-        "x": 810,
+        "debug": false,
+        "x": 1090,
         "y": 320,
         "wires": [
-            []
+            [
+                "938dc50d6b415c8a"
+            ]
         ]
     },
     {
@@ -274,7 +276,7 @@
         "payload": "getQuickInfo",
         "payloadType": "info",
         "debug": true,
-        "x": 810,
+        "x": 1090,
         "y": 380,
         "wires": [
             []
@@ -292,7 +294,7 @@
         "payload": "getQuickInfo",
         "payloadType": "info",
         "debug": true,
-        "x": 810,
+        "x": 1090,
         "y": 440,
         "wires": [
             []
@@ -310,7 +312,7 @@
         "payload": "getQuickInfo",
         "payloadType": "info",
         "debug": true,
-        "x": 810,
+        "x": 1090,
         "y": 500,
         "wires": [
             []
@@ -328,7 +330,7 @@
         "payload": "getQuickInfo",
         "payloadType": "info",
         "debug": true,
-        "x": 810,
+        "x": 1090,
         "y": 580,
         "wires": [
             []
@@ -340,12 +342,12 @@
         "z": "f58305dbdfb3aed7",
         "name": "Plug 1",
         "device": "10.3.2.141/0",
-        "interval": "1000",
-        "eventInterval": "1000",
-        "payload": "getQuickInfo",
-        "payloadType": "info",
-        "debug": true,
-        "x": 810,
+        "interval": "5000",
+        "eventInterval": "5000",
+        "payload": "",
+        "payloadType": "none",
+        "debug": false,
+        "x": 1090,
         "y": 240,
         "wires": [
             [
@@ -359,7 +361,7 @@
         "z": "f58305dbdfb3aed7",
         "name": "PowerStrip 2",
         "info": "",
-        "x": 250,
+        "x": 530,
         "y": 140,
         "wires": []
     },
@@ -369,15 +371,17 @@
         "z": "f58305dbdfb3aed7",
         "name": "Plug 2",
         "device": "10.3.0.88/1",
-        "interval": "1000",
-        "eventInterval": "1000",
-        "payload": "getQuickInfo",
-        "payloadType": "info",
-        "debug": true,
-        "x": 830,
+        "interval": "5000",
+        "eventInterval": "5000",
+        "payload": "",
+        "payloadType": "none",
+        "debug": false,
+        "x": 1110,
         "y": 820,
         "wires": [
-            []
+            [
+                "c9bb8ec418011169"
+            ]
         ]
     },
     {
@@ -386,15 +390,17 @@
         "z": "f58305dbdfb3aed7",
         "name": "Plug 3",
         "device": "10.3.0.88/2",
-        "interval": "1000",
-        "eventInterval": "1000",
-        "payload": "getQuickInfo",
-        "payloadType": "info",
-        "debug": true,
-        "x": 830,
+        "interval": "5000",
+        "eventInterval": "5000",
+        "payload": "",
+        "payloadType": "none",
+        "debug": false,
+        "x": 1110,
         "y": 880,
         "wires": [
-            []
+            [
+                "94c7636bde4e916e"
+            ]
         ]
     },
     {
@@ -403,15 +409,17 @@
         "z": "f58305dbdfb3aed7",
         "name": "Plug 4",
         "device": "10.3.0.88/3",
-        "interval": "1000",
-        "eventInterval": "1000",
-        "payload": "getQuickInfo",
-        "payloadType": "info",
-        "debug": true,
-        "x": 830,
+        "interval": "5000",
+        "eventInterval": "5000",
+        "payload": "",
+        "payloadType": "none",
+        "debug": false,
+        "x": 1110,
         "y": 940,
         "wires": [
-            []
+            [
+                "0594e5d7abf73eff"
+            ]
         ]
     },
     {
@@ -420,15 +428,17 @@
         "z": "f58305dbdfb3aed7",
         "name": "Plug 5",
         "device": "10.3.0.88/4",
-        "interval": "1000",
-        "eventInterval": "1000",
-        "payload": "getQuickInfo",
-        "payloadType": "info",
-        "debug": true,
-        "x": 830,
+        "interval": "5000",
+        "eventInterval": "5000",
+        "payload": "",
+        "payloadType": "none",
+        "debug": false,
+        "x": 1110,
         "y": 1000,
         "wires": [
-            []
+            [
+                "82724ea6eb9d9a4f"
+            ]
         ]
     },
     {
@@ -437,15 +447,17 @@
         "z": "f58305dbdfb3aed7",
         "name": "Plug 6",
         "device": "10.3.0.88/5",
-        "interval": "1000",
-        "eventInterval": "1000",
-        "payload": "getQuickInfo",
-        "payloadType": "info",
-        "debug": true,
-        "x": 830,
+        "interval": "5000",
+        "eventInterval": "5000",
+        "payload": "",
+        "payloadType": "none",
+        "debug": false,
+        "x": 1110,
         "y": 1080,
         "wires": [
-            []
+            [
+                "a87c4d4ad0974685"
+            ]
         ]
     },
     {
@@ -454,15 +466,17 @@
         "z": "f58305dbdfb3aed7",
         "name": "Plug 1",
         "device": "10.3.0.88/0",
-        "interval": "1000",
-        "eventInterval": "1000",
-        "payload": "getQuickInfo",
-        "payloadType": "info",
-        "debug": true,
-        "x": 830,
+        "interval": "5000",
+        "eventInterval": "5000",
+        "payload": "",
+        "payloadType": "none",
+        "debug": false,
+        "x": 1110,
         "y": 740,
         "wires": [
-            []
+            [
+                "63c43d8b6ae0a6c9"
+            ]
         ]
     },
     {
@@ -508,7 +522,7 @@
         "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
         "waitForSetupMsg": false,
         "outputs": 2,
-        "x": 220,
+        "x": 500,
         "y": 740,
         "wires": [
             [
@@ -521,7 +535,7 @@
         "id": "56f7ba074088b92b",
         "type": "function",
         "z": "f58305dbdfb3aed7",
-        "name": "State",
+        "name": "Update Device State",
         "func": "msg.payload = msg.payload.On;\nreturn msg;",
         "outputs": 1,
         "timeout": "",
@@ -529,7 +543,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
+        "x": 760,
         "y": 740,
         "wires": [
             [
@@ -580,7 +594,7 @@
         "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
         "waitForSetupMsg": false,
         "outputs": 2,
-        "x": 200,
+        "x": 480,
         "y": 820,
         "wires": [
             [
@@ -593,7 +607,7 @@
         "id": "183be2f38b3f5881",
         "type": "function",
         "z": "f58305dbdfb3aed7",
-        "name": "State",
+        "name": "Update Device State",
         "func": "msg.payload = msg.payload.On;\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
@@ -601,7 +615,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
+        "x": 760,
         "y": 820,
         "wires": [
             [
@@ -652,7 +666,7 @@
         "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
         "waitForSetupMsg": false,
         "outputs": 2,
-        "x": 230,
+        "x": 510,
         "y": 880,
         "wires": [
             [
@@ -665,7 +679,7 @@
         "id": "903dbf3eacfc0819",
         "type": "function",
         "z": "f58305dbdfb3aed7",
-        "name": "State",
+        "name": "Update Device State",
         "func": "msg.payload = msg.payload.On;\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
@@ -673,7 +687,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
+        "x": 760,
         "y": 880,
         "wires": [
             [
@@ -724,7 +738,7 @@
         "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
         "waitForSetupMsg": false,
         "outputs": 2,
-        "x": 230,
+        "x": 510,
         "y": 940,
         "wires": [
             [
@@ -737,7 +751,7 @@
         "id": "9a634f833a3c21a1",
         "type": "function",
         "z": "f58305dbdfb3aed7",
-        "name": "State",
+        "name": "Update Device State",
         "func": "msg.payload = msg.payload.On;\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
@@ -745,7 +759,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
+        "x": 760,
         "y": 940,
         "wires": [
             [
@@ -796,7 +810,7 @@
         "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
         "waitForSetupMsg": false,
         "outputs": 2,
-        "x": 220,
+        "x": 500,
         "y": 1000,
         "wires": [
             [
@@ -809,7 +823,7 @@
         "id": "b773f2b251ab4015",
         "type": "function",
         "z": "f58305dbdfb3aed7",
-        "name": "State",
+        "name": "Update Device State",
         "func": "msg.payload = msg.payload.On;\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
@@ -817,7 +831,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
+        "x": 760,
         "y": 1000,
         "wires": [
             [
@@ -868,7 +882,7 @@
         "characteristicProperties": "{\"OutletInUse\":{\"minValue\":0,\"maxValue\":1}}",
         "waitForSetupMsg": false,
         "outputs": 2,
-        "x": 220,
+        "x": 500,
         "y": 1080,
         "wires": [
             [
@@ -881,7 +895,7 @@
         "id": "c55c2e8c0103293d",
         "type": "function",
         "z": "f58305dbdfb3aed7",
-        "name": "State",
+        "name": "Update Device State",
         "func": "msg.payload = msg.payload.On;\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
@@ -889,7 +903,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
+        "x": 740,
         "y": 1080,
         "wires": [
             [
@@ -905,21 +919,17 @@
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "0.5",
+        "onceDelay": "8",
         "topic": "",
         "payload": "startPowerEvents",
         "payloadType": "str",
-        "x": 550,
-        "y": 660,
+        "x": 890,
+        "y": 640,
         "wires": [
             [
                 "bfb942bc3b191d01",
@@ -941,19 +951,191 @@
         "id": "5fb8b1ab754d3e60",
         "type": "function",
         "z": "f58305dbdfb3aed7",
-        "name": "function 1",
-        "func": "if (msg.payload.powerOn === true){\n    msg.payload = { \"On\": true };\n}\nelse if (msg.payload.powerOn === false) {\n    msg.payload = { \"On\": false };\n}\nelse {\n    msg.payload = \"Not a bool value\"\n}\n\nreturn msg; // Return the updated msg\n",
+        "name": "Update HomekitButton",
+        "func": "if (msg.payload.powerOn === true){\n    msg.payload = { \"On\": true };\n    return msg; // Return the updated msg\n}\nelse if (msg.payload.powerOn === false) {\n    msg.payload = { \"On\": false };\n    return msg; // Return the updated msg\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1010,
+        "x": 1340,
         "y": 240,
         "wires": [
             [
                 "503a4c551f4e455b"
+            ]
+        ]
+    },
+    {
+        "id": "938dc50d6b415c8a",
+        "type": "function",
+        "z": "f58305dbdfb3aed7",
+        "name": "Update HomekitButton",
+        "func": "if (msg.payload.powerOn === true) {\n    msg.payload = { \"On\": true };\n    return msg; // Return the updated msg\n}\nelse if (msg.payload.powerOn === false) {\n    msg.payload = { \"On\": false };\n    return msg; // Return the updated msg\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 320,
+        "wires": [
+            [
+                "351fa777b84b8db4"
+            ]
+        ]
+    },
+    {
+        "id": "63c43d8b6ae0a6c9",
+        "type": "function",
+        "z": "f58305dbdfb3aed7",
+        "name": "Update HomekitButton",
+        "func": "if (msg.payload.powerOn === true){\n    msg.payload = { \"On\": true };\n    return msg; // Return the updated msg\n}\nelse if (msg.payload.powerOn === false) {\n    msg.payload = { \"On\": false };\n    return msg; // Return the updated msg\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 740,
+        "wires": [
+            [
+                "bb64b28fd6057b03"
+            ]
+        ]
+    },
+    {
+        "id": "c9bb8ec418011169",
+        "type": "function",
+        "z": "f58305dbdfb3aed7",
+        "name": "Update HomekitButton",
+        "func": "if (msg.payload.powerOn === true) {\n    msg.payload = { \"On\": true };\n    return msg; // Return the updated msg\n}\nelse if (msg.payload.powerOn === false) {\n    msg.payload = { \"On\": false };\n    return msg; // Return the updated msg\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 820,
+        "wires": [
+            [
+                "373ec88ae88dbae0"
+            ]
+        ]
+    },
+    {
+        "id": "94c7636bde4e916e",
+        "type": "function",
+        "z": "f58305dbdfb3aed7",
+        "name": "Update HomekitButton",
+        "func": "if (msg.payload.powerOn === true) {\n    msg.payload = { \"On\": true };\n    return msg; // Return the updated msg\n}\nelse if (msg.payload.powerOn === false) {\n    msg.payload = { \"On\": false };\n    return msg; // Return the updated msg\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 880,
+        "wires": [
+            [
+                "e7851e1d1cd40fe7"
+            ]
+        ]
+    },
+    {
+        "id": "0594e5d7abf73eff",
+        "type": "function",
+        "z": "f58305dbdfb3aed7",
+        "name": "Update HomekitButton",
+        "func": "if (msg.payload.powerOn === true){\n    msg.payload = { \"On\": true };\n    return msg; // Return the updated msg\n}\nelse if (msg.payload.powerOn === false) {\n    msg.payload = { \"On\": false };\n    return msg; // Return the updated msg\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 940,
+        "wires": [
+            [
+                "b4ea6c9f61ee6a64"
+            ]
+        ]
+    },
+    {
+        "id": "82724ea6eb9d9a4f",
+        "type": "function",
+        "z": "f58305dbdfb3aed7",
+        "name": "Update HomekitButton",
+        "func": "if (msg.payload.powerOn === true) {\n    msg.payload = { \"On\": true };\n    return msg; // Return the updated msg\n}\nelse if (msg.payload.powerOn === false) {\n    msg.payload = { \"On\": false };\n    return msg; // Return the updated msg\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 1000,
+        "wires": [
+            [
+                "21a92a20eff479d2"
+            ]
+        ]
+    },
+    {
+        "id": "a87c4d4ad0974685",
+        "type": "function",
+        "z": "f58305dbdfb3aed7",
+        "name": "Update HomekitButton",
+        "func": "if (msg.payload.powerOn === true) {\n    msg.payload = { \"On\": true };\n    return msg; // Return the updated msg\n}\nelse if (msg.payload.powerOn === false) {\n    msg.payload = { \"On\": false };\n    return msg; // Return the updated msg\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 1080,
+        "wires": [
+            [
+                "6dab657a63af1668"
+            ]
+        ]
+    },
+    {
+        "id": "13d19091c70190be",
+        "type": "inject",
+        "z": "f58305dbdfb3aed7",
+        "name": "Set to on on startup",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "10",
+        "topic": "",
+        "payload": "{\"On\":true}",
+        "payloadType": "json",
+        "x": 140,
+        "y": 580,
+        "wires": [
+            [
+                "503a4c551f4e455b",
+                "351fa777b84b8db4",
+                "bb64b28fd6057b03",
+                "373ec88ae88dbae0",
+                "e7851e1d1cd40fe7",
+                "b4ea6c9f61ee6a64",
+                "21a92a20eff479d2",
+                "6dab657a63af1668"
             ]
         ]
     },
